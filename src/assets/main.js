@@ -31,7 +31,7 @@ async function fetchData(urlApi){
                 <div class="group relative">
                     <div
                         class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-                        <img src="${video.snippet.thumbnail.high.url}" alt="${video.snippet.description}" class="w-full">
+                        <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">
                     </div>
                     <div class="mt-4 flex justify-between">
                         <h3 class="text-sm text-gray-700">
@@ -42,8 +42,25 @@ async function fetchData(urlApi){
                 </div>
             `).slice(0,4).join('')}
 
-    `
-    }catch{
-
+    `;
+    content.innerHTML = view;
+    }catch(error){
+        // Lo ideal no es solamente mostrar un error en consola, tambien es ideal mostrar el error el pantalla para el usuario
+        console.log(error)  
     };
 })();
+
+
+// api yahoo finances
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '8111ef2c8amsh66328124e7128acp1f5cc6jsn9a55a4f466bb',
+// 		'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary?symbol=AMRN&region=US', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));

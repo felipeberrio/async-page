@@ -16,3 +16,8 @@
 
 6. Corregimos el código con nuestro template de content, utilizamos funciones anonimas autoejecutadas
     https://developer.mozilla.org/es/docs/Glossary/IIFE
+
+
+8. Publicamos nuestro proyecto en github con: npm install gh-pages --save-dev 
+    en el package.json creamos el script:    "deploy": "gh-pages -d src"
+    y corremos con npm run deploy
